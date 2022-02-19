@@ -1,0 +1,11 @@
+{
+    "name": "Docker ROS Indigo RAS",
+    "dockerFile": "Dockerfile",
+    "appPort": 3000,
+    "workspaceMount": "source=/home/juansebastianbarretojimenez/Escritorio/ROSIndigoHome,target=/home/Sebastian,type=bind",
+    "workspaceFolder" : "/home/Sebastian",
+    "runArgs": ["--net=host", "--volume=/tmp/.X11-unix:/tmp/.X11-unix", "--volume=/dev/dri:/dev/dri",
+                "--volume=/home/juansebastianbarretojimenez/Escritorio/DockerFiles/ModelsGazeboIndigo:/workspaces/ROSIndigoDocker/ModelsGazebo",
+                "--volume=/home/juansebastianbarretojimenez/Escritorio/DockerFiles/Nao:/workspaces/ROSIndigoDocker/Nao",
+                "--env=QT_X11_NO_MITSHM=1", "--env=DISPLAY=:0"]
+}
